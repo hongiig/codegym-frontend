@@ -1,15 +1,35 @@
+// ============================================
+// 1. VARIABLES (Biến định nghĩa)
+// ============================================
 $grid-columns: 12;
-$gutter: 10px;
-$primary-color: #3b82f6;
+$gutter: 15px;
+$primary-color: #2563eb;
+$text-color: #1e293b;
+$bg-color: #f8fafc;
+$card-bg: #ffffff;
+$border-color: #e2e8f0;
 
-@mixin respond-to($bp) {
-  @if $bp == "md" {
-    @media (min-width: 768px) { @content; }
-  } @else if $bp == "lg" {
-    @media (min-width: 992px) { @content; }
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 992px;
+
+// ============================================
+// 2. MIXINS
+// ============================================
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "tablet" {
+    @media (min-width: $breakpoint-tablet) { @content; }
+  } @else if $breakpoint == "desktop" {
+    @media (min-width: $breakpoint-desktop) { @content; }
   }
 }
 
+@mixin card-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+// ============================================
+// 3. BASE STYLES
+// ============================================
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,36 +38,108 @@ $primary-color: #3b82f6;
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #2c3e50;
-  background-color: #f8fafc;
-  padding: 30px 20px;
+  color: $text-color;
+  background-color: $bg-color;
+  line-height: 1.6;
+  padding: 30px 15px;
 }
 
 .container {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+
+  h1 {
+    font-size: 2rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #64748b;
+  }
+}
+
+// ============================================
+// 4. GRID SYSTEM
+// ============================================
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin: -$gutter;
+  margin-left: -$gutter;
+  margin-right: -$gutter;
 }
 
+[class*="col-"] {
+  padding-left: $gutter;
+  padding-right: $gutter;
+  width: 100%;
+  margin-bottom: $gutter * 2;
+}
+
+// Mobile-first: 12 Cột mặc định
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    width: percentage($i / $grid-columns);
+  }
+}
+
+// Tablet Responsive: col-md-
+@include respond-to("tablet") {
+  @for $i from 1 through $grid-columns {
+    .col-md-#{$i} {
+      width: percentage($i / $grid-columns);
+    }
+  }
+}
+
+// Desktop Responsive: col-lg-
+@include respond-to("desktop") {
+  @for $i from 1 through $grid-columns {
+    .col-lg-#{$i} {
+      width: percentage($i / $grid-columns);
+    }
+  }
+}
+
+// ============================================
+// 5. COMPONENTS
+// ============================================
 .card {
-  background: white;
-  border: 1px solid #e2e8f0;
+  background: $card-bg;
+  border: 1px solid $border-color;
   border-radius: 8px;
   padding: 25px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
+  height: 100%;
+  @include card-shadow;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
     transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   }
 
   h3 {
     color: $primary-color;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
   }
+
+  p {
+    color: #475569;
+    font-size: 0.95rem;
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  color: #94a3b8;
+  border-top: 1px solid $border-color;
+  margin-top: 20px;
 }

@@ -3,34 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài tập Tái cấu trúc CSS Responsive Grid sang SASS</title>
+    <title>Responsive Grid with SASS - CodeGym</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Bài tập Tái cấu trúc CSS Responsive Grid sang SASS</h1>
-        <p>Hệ thống lưới Responsive Grid xây dựng bằng SCSS chuyên nghiệp.</p>
-        
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card">
-                    <h3>Cột 1</h3>
-                    <p>Nội dung thẻ card 1 được tạo bằng SASS Mixin & Grid System.</p>
+        <header class="header">
+            <h1>Hệ thống Responsive Grid tái cấu trúc bằng SASS</h1>
+            <p>Thực hành tạo hệ thống lưới 12 cột linh hoạt với Mixin, Variable, Nesting và Vòng lặp @for trong SCSS.</p>
+        </header>
+
+        <section class="section">
+            <h2>Demo Bố Cục 12 Cột Responsive</h2>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <h3>Cột 1 (4/12)</h3>
+                        <p>Nội dung hiển thị dạng Card 1, co giãn tự động theo kích thước màn hình thiết bị.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <h3>Cột 2 (4/12)</h3>
+                        <p>Nội dung hiển thị dạng Card 2, co giãn tự động theo kích thước màn hình thiết bị.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-4">
+                    <div class="card">
+                        <h3>Cột 3 (4/12)</h3>
+                        <p>Nội dung hiển thị dạng Card 3, co giãn tự động theo kích thước màn hình thiết bị.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card">
-                    <h3>Cột 2</h3>
-                    <p>Nội dung thẻ card 2 được tạo bằng SASS Mixin & Grid System.</p>
+
+            <div class="row">
+                <div class="col-12 col-md-4 col-lg-6">
+                    <div class="card">
+                        <h3>Cột 4 (6/12 Desktop)</h3>
+                        <p>Tối ưu hóa khả năng tái sử dụng với mixin responsive @content.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="card">
+                        <h3>Cột 5 (6/12 Desktop)</h3>
+                        <p>Tối ưu hóa khả năng tái sử dụng với mixin responsive @content.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-12 col-md-12 col-lg-4">
-                <div class="card">
-                    <h3>Cột 3</h3>
-                    <p>Nội dung thẻ card 3 được tạo bằng SASS Mixin & Grid System.</p>
-                </div>
-            </div>
-        </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 CodeGym Vietnam - Responsive Grid SASS Project</p>
+        </footer>
     </div>
 </body>
 </html>
