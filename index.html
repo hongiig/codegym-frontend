@@ -3,58 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Grid with SASS - CodeGym</title>
+    <title>Landing Page Tái Cấu Trúc SASS - CodeGym</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>Hệ thống Responsive Grid tái cấu trúc bằng SASS</h1>
-            <p>Thực hành tạo hệ thống lưới 12 cột linh hoạt với Mixin, Variable, Nesting và Vòng lặp @for trong SCSS.</p>
-        </header>
 
-        <section class="section">
-            <h2>Demo Bố Cục 12 Cột Responsive</h2>
-            <div class="row">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card">
-                        <h3>Cột 1 (4/12)</h3>
-                        <p>Nội dung hiển thị dạng Card 1, co giãn tự động theo kích thước màn hình thiết bị.</p>
+    <!-- 1. NAVIGATION & HEADER -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">Brand<span>Name</span></div>
+            <ul class="nav-links">
+                <li><a href="#header">Trang chủ</a></li>
+                <li><a href="#products">Sản phẩm</a></li>
+                <li><a href="#stats">Thống kê</a></li>
+                <li><a href="#footer">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="header" id="header">
+        <div class="container header-content">
+            <h1>Giải Pháp Công Nghệ Tương Lai</h1>
+            <p>Xây dựng và phát triển giao diện hiện đại, tối ưu trải nghiệm người dùng với SASS/SCSS chuyên nghiệp.</p>
+            <a href="#products" class="btn btn-primary">Khám Phá Ngay</a>
+        </div>
+    </header>
+
+    <!-- 2. SẢN PHẨM NỔI BẬT -->
+    <section class="section products-section" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sản Phẩm Nổi Bật</h2>
+                <p>Những giải pháp được khách hàng tin tưởng và đánh giá cao nhất</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card product-card">
+                    <img src="https://picsum.photos/400/250?random=11" alt="Product 1">
+                    <div class="card-body">
+                        <h3>Nền Tảng E-Commerce</h3>
+                        <p>Hệ thống bán hàng trực tuyến tối ưu tốc độ và chuyển đổi.</p>
+                        <span class="price">$199</span>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card">
-                        <h3>Cột 2 (4/12)</h3>
-                        <p>Nội dung hiển thị dạng Card 2, co giãn tự động theo kích thước màn hình thiết bị.</p>
+                <div class="card product-card">
+                    <img src="https://picsum.photos/400/250?random=12" alt="Product 2">
+                    <div class="card-body">
+                        <h3>Ứng Dụng Quản Lý</h3>
+                        <p>Giải pháp CRM & ERP tinh gọn dành cho doanh nghiệp SME.</p>
+                        <span class="price">$299</span>
                     </div>
                 </div>
-                <div class="col-12 col-md-12 col-lg-4">
-                    <div class="card">
-                        <h3>Cột 3 (4/12)</h3>
-                        <p>Nội dung hiển thị dạng Card 3, co giãn tự động theo kích thước màn hình thiết bị.</p>
+                <div class="card product-card">
+                    <img src="https://picsum.photos/400/250?random=13" alt="Product 3">
+                    <div class="card-body">
+                        <h3>Dịch Vụ Cloud Server</h3>
+                        <p>Hạ tầng đám mây an toàn, bảo mật và hỗ trợ 24/7 chuyên sâu.</p>
+                        <span class="price">$399</span>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="row">
-                <div class="col-12 col-md-4 col-lg-6">
-                    <div class="card">
-                        <h3>Cột 4 (6/12 Desktop)</h3>
-                        <p>Tối ưu hóa khả năng tái sử dụng với mixin responsive @content.</p>
-                    </div>
+    <!-- 3. SỐ LIỆU THỐNG KÊ -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <div class="grid grid-4 stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">10k+</div>
+                    <div class="stat-label">Khách hàng hài lòng</div>
                 </div>
-                <div class="col-12 col-md-8 col-lg-6">
-                    <div class="card">
-                        <h3>Cột 5 (6/12 Desktop)</h3>
-                        <p>Tối ưu hóa khả năng tái sử dụng với mixin responsive @content.</p>
-                    </div>
+                <div class="stat-box">
+                    <div class="stat-number">250+</div>
+                    <div class="stat-label">Dự án hoàn thành</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Thời gian uptime</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Hỗ trợ kỹ thuật</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer class="footer">
-            <p>&copy; 2026 CodeGym Vietnam - Responsive Grid SASS Project</p>
-        </footer>
-    </div>
+    <!-- 4. FOOTER -->
+    <footer class="footer" id="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3>Về Chúng Tôi</h3>
+                <p>Hệ sinh thái đào tạo và phát triển phần mềm chuẩn quốc tế.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Liên Kết Nhanh</h3>
+                <ul>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Dịch vụ</a></li>
+                    <li><a href="#">Chính sách</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Liên Hệ</h3>
+                <p>Email: contact@codegym.vn</p>
+                <p>Hotline: 1900 633 895</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BrandName. Tái cấu trúc hoàn chỉnh bằng SASS.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
