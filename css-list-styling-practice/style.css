@@ -1,0 +1,189 @@
+/* Style chung cho toàn bộ trang */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.exercise-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #fafbfc;
+    border-radius: 8px;
+    border: 1px solid #e1e8ed;
+}
+
+.exercise-section h2 {
+    font-size: 1.25rem;
+    color: #34495e;
+    margin-bottom: 15px;
+}
+
+.exercise-section h3 {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* 2. Thay đổi kiểu đánh dấu danh sách không thứ tự: square */
+.list-square {
+    list-style-type: square;
+    padding-left: 30px;
+}
+
+.list-square li {
+    padding: 4px 0;
+}
+
+/* 3. Thay đổi kiểu đánh dấu danh sách có thứ tự: upper-roman */
+.list-roman {
+    list-style-type: upper-roman;
+    padding-left: 35px;
+}
+
+.list-roman li {
+    padding: 4px 0;
+}
+
+/* 4. Sử dụng hình ảnh làm dấu đánh dấu (list-style-image) */
+.list-image {
+    list-style-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16'%3E%3Cpath fill='%2327ae60' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E");
+    padding-left: 30px;
+}
+
+.list-image li {
+    padding: 4px 0;
+}
+
+/* 5. Thay đổi vị trí dấu đánh dấu: outside vs inside */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.list-outside {
+    list-style-type: disc;
+    list-style-position: outside;
+    background-color: #edf2f7;
+    padding: 15px 15px 15px 35px;
+    border-radius: 6px;
+    border: 1px dashed #cbd5e0;
+}
+
+.list-inside {
+    list-style-type: disc;
+    list-style-position: inside;
+    background-color: #edf2f7;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px dashed #cbd5e0;
+}
+
+.list-outside li, .list-inside li {
+    margin-bottom: 8px;
+    background-color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+/* 6. Sử dụng thuộc tính rút gọn list-style (type, position, image) */
+.list-shorthand {
+    list-style: square inside url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='14' height='14'%3E%3Cpath fill='%232980b9' d='M8 5v14l11-7z'/%3E%3C/svg%3E");
+    background-color: #ebf5fb;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.list-shorthand li {
+    padding: 6px 8px;
+    border-bottom: 1px solid #d4e6f1;
+}
+
+.list-shorthand li:last-child {
+    border-bottom: none;
+}
+
+/* 7. Tạo kiểu danh sách với màu sắc, background, padding, margin */
+.list-styled-colors {
+    background-color: #fce4ec;
+    color: #880e4f;
+    padding: 20px 25px;
+    border-radius: 8px;
+    list-style-type: circle;
+}
+
+.list-styled-colors li {
+    background-color: #ffffff;
+    color: #c2185b;
+    margin: 8px 0;
+    padding: 10px 15px;
+    border-left: 4px solid #ad1457;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* 8. Bài tập tổng hợp: Lộ trình học lập trình Web */
+.highlight-section {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border: 1px solid #a5d6a7;
+}
+
+.highlight-section h2 {
+    color: #1b5e20;
+}
+
+.list-roadmap {
+    list-style: square inside;
+    background-color: #ffffff;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(46, 125, 50, 0.15);
+}
+
+.list-roadmap li {
+    background-color: #f1f8e9;
+    color: #2e7d32;
+    font-weight: 600;
+    margin: 10px 0;
+    padding: 12px 18px;
+    border-radius: 6px;
+    border-left: 5px solid #43a047;
+    transition: all 0.2s ease-in-out;
+}
+
+.list-roadmap li:hover {
+    background-color: #dcedc8;
+    transform: translateX(6px);
+}
