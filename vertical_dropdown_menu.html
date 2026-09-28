@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn tạo Menu Dropdown Dọc</title>
+    <style>
+        /* Đặt cố định font chữ và reset căn lề */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+
+        #menu ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Định kiểu cho phần tử trong danh sách (li) */
+        #menu li {
+            list-style: none; /* Bỏ ký hiệu đầu mục */
+            position: relative; /* Cho phép danh sách con đặt cạnh phần tử chứa nó */
+            width: 120px;
+            height: 30px; /* Cố định chiều rộng và chiều cao */
+            padding: 0 20px; /* Lề trong trái phải */
+            background-color: black; /* Màu nền đen */
+            line-height: 30px; /* Chiều cao dòng bằng chiều cao li để căn giữa dọc */
+            cursor: pointer; /* Chuyển con trỏ thành hình bàn tay */
+            border-bottom: 1px solid #333;
+        }
+
+        /* Định kiểu cho liên kết (thẻ a) */
+        #menu li a {
+            text-decoration: none; /* Bỏ gạch chân */
+            color: white; /* Màu chữ trắng */
+            display: block;
+        }
+
+        /* Đổi màu nền khi di chuột qua phần tử li */
+        #menu li:hover {
+            background-color: #555;
+        }
+
+        /* Định kiểu cho danh sách con (menu cấp 2) */
+        #menu li ul {
+            position: absolute; /* Vị trí tuyệt đối so với li cha */
+            top: 0;
+            left: 160px; /* Xuất hiện ngay bên phải của li cha (120px + 2*20px padding = 160px) */
+            visibility: hidden; /* Mặc định ẩn danh sách con */
+        }
+
+        /* Hiển thị danh sách con khi hover vào li cha */
+        #menu li:hover > ul {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Hướng dẫn tạo Menu Dropdown Dọc Đơn Giản</h2>
+    <p>Di chuột qua các mục menu (như <b>Services</b>, <b>Products</b>) để xem menu con xuất hiện sang bên phải:</p>
+
+    <div id="menu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li>
+                <a href="#services">Services &raquo;</a>
+                <ul>
+                    <li><a href="#web">Web Design</a></li>
+                    <li><a href="#app">App Dev</a></li>
+                    <li><a href="#seo">SEO Marketing</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#products">Products &raquo;</a>
+                <ul>
+                    <li><a href="#phone">Smartphones</a></li>
+                    <li><a href="#laptop">Laptops</a></li>
+                    <li><a href="#tablet">Tablets</a></li>
+                </ul>
+            </li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
