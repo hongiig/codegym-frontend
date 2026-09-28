@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn tạo Menu Dropdown Ngang</title>
+    <style>
+        /* Bộ chọn cố định phông chữ cho trang HTML */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+            background-color: #f7f9fa;
+        }
+
+        /* Phân vùng cho trình đơn: chiều cao, khoảng cách, màu nền */
+        #menu {
+            height: 40px;
+            background-color: #333;
+            border-radius: 4px;
+        }
+
+        #menu ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* Bộ chọn cho các phần tử trong danh sách (li) */
+        #menu ul li {
+            float: left; /* Xếp thành hàng ngang */
+            position: relative; /* Làm gốc tọa độ cho menu con */
+            list-style: none;
+        }
+
+        /* Định nghĩa bộ chọn cho các liên kết (thẻ a) trong trình đơn */
+        #menu ul li a {
+            display: block; /* Hiển thị dạng khối */
+            width: 130px; /* Cố định độ rộng */
+            height: 40px; /* Chiều cao */
+            line-height: 40px; /* Căn giữa dọc */
+            color: #fff; /* Màu chữ trắng */
+            text-decoration: none; /* Bỏ gạch chân */
+            text-align: center; /* Căn giữa văn bản */
+            font-weight: bold;
+            font-size: 15px;
+            transition: background-color 0.2s ease;
+        }
+
+        /* Đổi màu nền sang màu đỏ khi hover vào thẻ a */
+        #menu ul li a:hover {
+            background-color: #e74c3c;
+        }
+
+        /* Bộ chọn dành cho danh sách con (menu dropdown buông xuống) */
+        #menu ul ul {
+            position: absolute; /* Vị trí tuyệt đối */
+            top: 40px; /* Xuất hiện ngay dưới thanh menu cha */
+            left: 0;
+            visibility: hidden; /* Mặc định ẩn danh sách con */
+            background-color: #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 4px 4px;
+            z-index: 100;
+        }
+
+        /* Menu con xếp dọc lại */
+        #menu ul ul li {
+            float: none;
+            border-bottom: 1px solid #555;
+        }
+
+        #menu ul ul li a {
+            text-align: left;
+            padding-left: 15px;
+            width: 145px; /* Chiều rộng phù hợp với nội dung menu con */
+        }
+
+        /* Hiển thị menu con khi đưa con trỏ qua mục chọn tương ứng ở menu cha */
+        #menu ul li:hover > ul {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Hướng dẫn tạo Menu Dropdown Ngang Đơn Giản</h2>
+    <p>Di chuột qua các mục trên thanh menu ngang (ví dụ: <b>Khóa học</b>, <b>Tài liệu</b>) để xem menu con buông xuống phía dưới:</p>
+
+    <div id="menu">
+        <ul>
+            <li><a href="#trangchu">Trang chủ</a></li>
+            <li>
+                <a href="#khoahoc">Khóa học &#9662;</a>
+                <ul>
+                    <li><a href="#html">HTML5 & CSS3</a></li>
+                    <li><a href="#js">JavaScript Pro</a></li>
+                    <li><a href="#react">ReactJS</a></li>
+                    <li><a href="#node">Node.js</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#tailieu">Tài liệu &#9662;</a>
+                <ul>
+                    <li><a href="#ebook">Ebook Miễn Phí</a></li>
+                    <li><a href="#video">Video Bài Giảng</a></li>
+                    <li><a href="#sourcecode">Source Code</a></li>
+                </ul>
+            </li>
+            <li><a href="#tintuc">Tin tức</a></li>
+            <li><a href="#lienhe">Liên hệ</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
