@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KidsToon - Thế Giới Phim Hoạt Hình Chọn Lọc Cho Thiếu Nhi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Header cố định (Fixed Header) chứa Logo và Head-link & Search -->
+    <header class="fixed-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="#">
+                    <span class="logo-icon">🎬</span>
+                    <span class="logo-text">Kids<span class="highlight">Toon</span></span>
+                </a>
+            </div>
+
+            <!-- Thanh tìm kiếm & bộ lọc -->
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm phim hoạt hình..." onkeyup="filterVideos()">
+                <button type="button">🔍</button>
+            </div>
+
+            <!-- Head-link: Chứa các liên kết điều hướng -->
+            <nav class="head-link">
+                <ul>
+                    <li><a href="#" class="active">Trang chủ</a></li>
+                    <li><a href="#popular">Xem nhiều nhất</a></li>
+                    <li><a href="#newest">Mới cập nhật</a></li>
+                    <li><a href="#genres">Thể loại</a></li>
+                    <li><a href="#about">Về chúng tôi</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. Main Content Layout: Left Content (Playlist) & Right Content (Video Player) -->
+    <main class="main-container">
+        <!-- Left Content: Danh sách video chọn lọc -->
+        <aside class="left-content">
+            <div class="sidebar-header">
+                <h3>Danh sách phát (Chọn lọc)</h3>
+                <div class="sort-options">
+                    <span class="badge active" onclick="sortList('popular')">🔥 Xem nhiều</span>
+                    <span class="badge" onclick="sortList('new')">✨ Mới nhất</span>
+                </div>
+            </div>
+
+            <div class="video-playlist" id="videoPlaylist">
+                <!-- Video 1: HTML5 Video tag (Big Buck Bunny) -->
+                <div class="playlist-item active" onclick="playVideo('html5', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', 'Big Buck Bunny (Thỏ Khổng Lồ)', 'HD 1080p • Thuyết minh Tiếng Việt • Hài hước / Phiêu lưu', this)">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=200&q=80" alt="Big Buck Bunny" class="video-thumb">
+                    <div class="video-info">
+                        <h4>Big Buck Bunny (Thỏ Khổng Lồ)</h4>
+                        <p class="meta">1080p Full HD • 9.8 phút</p>
+                        <span class="tag">HTML5 Video</span>
+                    </div>
+                </div>
+
+                <!-- Video 2: HTML5 Video tag (Elephants Dream) -->
+                <div class="playlist-item" onclick="playVideo('html5', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4', 'Elephants Dream (Thế Giới Kỳ Ảo)', 'HD 1080p • Thuyết minh Tiếng Việt • Khám phá / Khoa học', this)">
+                    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=200&q=80" alt="Elephants Dream" class="video-thumb">
+                    <div class="video-info">
+                        <h4>Elephants Dream (Thế Giới Kỳ Ảo)</h4>
+                        <p class="meta">1080p Full HD • 10.9 phút</p>
+                        <span class="tag">HTML5 Video</span>
+                    </div>
+                </div>
+
+                <!-- Video 3: YouTube Iframe (Doraemon) -->
+                <div class="playlist-item" onclick="playVideo('youtube', 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ', 'Doraemon: Chú Mèo Máy Đến Từ Tương Lai', 'FullHD 1080p • Lồng tiếng Việt • Giáo dục & Tình bạn', this)">
+                    <img src="https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=200&q=80" alt="Doraemon" class="video-thumb">
+                    <div class="video-info">
+                        <h4>Doraemon: Chú Mèo Máy</h4>
+                        <p class="meta">HD 720p • Lồng tiếng Việt</p>
+                        <span class="tag yt">YouTube <iframe></span>
+                    </div>
+                </div>
+
+                <!-- Video 4: HTML5 Video tag (For Bigger Blazes) -->
+                <div class="playlist-item" onclick="playVideo('html5', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4', 'Chuyến Phiêu Lưu Của Biệt Đội Rừng Xanh', 'HD 720p • Thuyết minh Tiếng Việt • Hoạt hình động vật', this)">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=200&q=80" alt="Rừng Xanh" class="video-thumb">
+                    <div class="video-info">
+                        <h4>Biệt Đội Rừng Xanh</h4>
+                        <p class="meta">HD 720p • 15 phút</p>
+                        <span class="tag">HTML5 Video</span>
+                    </div>
+                </div>
+
+                <!-- Video 5: HTML5 Video tag (Sintel Trailer) -->
+                <div class="playlist-item" onclick="playVideo('html5', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4', 'Sintel: Tình Bạn Rồng Con', 'FullHD 1080p • Thuyết minh Tiếng Việt • Tình cảm / Phiêu lưu', this)">
+                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=200&q=80" alt="Sintel" class="video-thumb">
+                    <div class="video-info">
+                        <h4>Sintel: Tình Bạn Rồng Con</h4>
+                        <p class="meta">FullHD 1080p • 12 phút</p>
+                        <span class="tag">HTML5 Video</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Content: Khung phát Video & Chi tiết phim -->
+        <section class="right-content">
+            <div class="player-wrapper">
+                <!-- HTML5 Video element (mặc định hiển thị video đầu tiên) -->
+                <video id="html5Player" controls autoplay muted poster="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1200&q=80">
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ thẻ video HTML5.
+                </video>
+
+                <!-- YouTube iframe element (khi chọn video YouTube) -->
+                <iframe id="youtubePlayer" style="display: none;" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <!-- Video Details -->
+            <div class="video-details">
+                <div class="details-header">
+                    <h1 id="currentVideoTitle">Big Buck Bunny (Thỏ Khổng Lồ)</h1>
+                    <div class="quality-tag">1080p FullHD • An toàn cho bé 🛡️</div>
+                </div>
+                <p class="video-desc" id="currentVideoDesc">
+                    HD 1080p • Thuyết minh Tiếng Việt • Hài hước / Phiêu lưu. Bộ phim hoạt hình kinh điển không chứa quảng cáo độc hại, rèn luyện tính kiên nhẫn, lòng vị tha và tình yêu thương muôn loài cho các em thiếu nhi.
+                </p>
+
+                <div class="safe-banner">
+                    <span>✅ <b>Cam kết nội dung:</b> Đã qua kiểm duyệt 100% phù hợp lứa tuổi thiếu nhi, không quảng cáo, âm thanh chuẩn thuyết minh tiếng Việt.</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 3. Footer: Thông tin bản quyền và giới thiệu -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>🎬 KidsToon</h3>
+                <p>Website xem phim hoạt hình an toàn, bổ ích và miễn phí dành riêng cho thiếu nhi Việt Nam.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Chính sách & An toàn</h4>
+                <ul>
+                    <li><a href="#">Tiêu chuẩn cộng đồng cho trẻ em</a></li>
+                    <li><a href="#">Bảo vệ quyền riêng tư</a></li>
+                    <li><a href="#">Cam kết không quảng cáo</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Bản quyền</h4>
+                <p>&copy; 2026 KidsToon Cartoon Network. Giữ toàn bộ bản quyền nội dung.</p>
+                <p>Designed with HTML5 & CSS3 layout standards.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript chuyển đổi video & tìm kiếm tương tác -->
+    <script>
+        function playVideo(type, source, title, desc, element) {
+            const html5Player = document.getElementById('html5Player');
+            const youtubePlayer = document.getElementById('youtubePlayer');
+            const titleElem = document.getElementById('currentVideoTitle');
+            const descElem = document.getElementById('currentVideoDesc');
+
+            // Cập nhật active class cho playlist
+            document.querySelectorAll('.playlist-item').forEach(item => item.classList.remove('active'));
+            if(element) element.classList.add('active');
+
+            // Cập nhật thông tin
+            titleElem.innerText = title;
+            descElem.innerText = desc;
+
+            if (type === 'html5') {
+                youtubePlayer.style.display = 'none';
+                youtubePlayer.src = '';
+                html5Player.style.display = 'block';
+                html5Player.src = source;
+                html5Player.play();
+            } else if (type === 'youtube') {
+                html5Player.pause();
+                html5Player.style.display = 'none';
+                youtubePlayer.style.display = 'block';
+                youtubePlayer.src = source + "?autoplay=1";
+            }
+        }
+
+        function filterVideos() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('.playlist-item');
+            items.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function sortList(type) {
+            const badges = document.querySelectorAll('.badge');
+            badges.forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
