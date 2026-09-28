@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành Cài đặt và Biên dịch SASS/SCSS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌸 SASS & SCSS Practice Guide</h1>
+            <p>Báo cáo thực hành cài đặt môi trường, biên dịch SCSS sang CSS và quản lý SASS CLI / npm.</p>
+        </header>
+
+        <section class="card">
+            <h2>1. Kiểm tra Môi trường (Node.js, npm & SASS)</h2>
+            <p>Môi trường đã được kiểm tra và kích hoạt thành công trên máy:</p>
+            <div class="code-block">
+                $ node -v  =>  v24.21.0<br>
+                $ npm -v   =>  11.19.0<br>
+                $ sass -v  =>  1.105.0 (Dart Sass)
+            </div>
+            <ul>
+                <li>Node.js và npm đã sẵn sàng trong hệ thống.</li>
+                <li>SASS CLI hoạt động ổn định và hỗ trợ đầy đủ cú pháp SCSS hiện đại.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>2. Các Lệnh Biên Dịch Đã Thực Hành</h2>
+            <p><strong>Biên dịch một tệp SCSS sang CSS:</strong></p>
+            <div class="code-block">sass scss/styles.scss css/styles.css</div>
+
+            <p><strong>Kích hoạt chế độ theo dõi tự động (Watch Mode):</strong></p>
+            <div class="code-block">sass scss/styles.scss css/styles.css --watch</div>
+
+            <p><strong>Biên dịch hàng loạt nhiều tệp từ thư mục scss/ sang css/:</strong></p>
+            <div class="code-block">sass scss/:css/ --watch</div>
+        </section>
+
+        <section class="card">
+            <h2>3. Các tính năng SCSS đã ứng dụng trong bài</h2>
+            <ul>
+                <li><strong>SCSS Variables ($):</strong> Quản lý bảng màu, border-radius và font-family tập trung.</li>
+                <li><strong>Nesting (Lồng nhau):</strong> Viết CSS có cấu trúc cây rõ ràng, dễ bảo trì.</li>
+                <li><strong>Mixins (@mixin & @include):</strong> Tái sử dụng khối box-shadow và hiệu ứng chuyển động hover.</li>
+            </ul>
+        </section>
+
+        <footer>
+            &copy; 2026 SASS Practice Lab • Built with SCSS & Dart Sass
+        </footer>
+    </div>
+</body>
+</html>
